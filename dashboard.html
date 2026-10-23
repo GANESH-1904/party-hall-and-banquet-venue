@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Celebration Planner | Aurelia Hall – Banquets &amp; Celebrations</title><meta name="robots" content="noindex"><meta name="theme-color" content="#14061f"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e1d'/%3E%3Cpath d='M16 50V30a16 16 0 0 1 32 0v20' fill='none' stroke='%23e0bd6b' stroke-width='4' stroke-linecap='round'/%3E%3Cpolygon points='32,19 35,27 43,27 37,32 39,40 32,35 25,40 27,32 21,27 29,27' fill='%23e0bd6b'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="dashboard.css"></head>
+<body>
+<header class="tb" id="tb"><div class="tb-in">
+<a class="tb-brand" href="index.html" aria-label="Aurelia Hall – back to the website"><svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4l22 8v18c0 14-9 25-22 30C19 55 10 44 10 30V12z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M20 43V32a12 12 0 0 1 24 0v11" fill="none" stroke="#ffc94a" stroke-width="3" stroke-linecap="round"/><polygon points="32,20 34,26 40,26 35.5,30 37,36 32,32.5 27,36 28.5,30 24,26 30,26" fill="#ffc94a"/></svg><span><b>Aurelia</b><small>CELEBRATION PLANNER</small></span></a>
+<nav class="steps" id="steps" aria-label="Planning steps"><a href="#sec-date" data-s="date"><i>1</i><span>Date</span></a><a href="#sec-menu" data-s="menu"><i>2</i><span>Menu</span></a><a href="#sec-decor" data-s="decor"><i>3</i><span>Decor</span></a><a href="#sec-pay" data-s="pay"><i>4</i><span>Payments</span></a><a href="#sec-tools" data-s="tools"><i>5</i><span>Toolkit</span></a></nav>
+<div class="tb-r"><button class="rtlb" id="rtl" type="button" aria-pressed="false" aria-label="Switch text direction to right-to-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4M21 7H8M7 21l-4-4 4-4M3 17h13"/></svg><b id="rtlT">RTL</b></button><button class="ib" id="th" type="button" aria-label="Toggle light or dark theme"></button></div>
+</div></header>
+<main>
+<section class="hero" id="top"><canvas class="conf" id="conf" aria-hidden="true"></canvas><div class="hero-in">
+<div class="hero-t"><span class="kicker">Your celebration planner</span><h1>Plan a day they will <em>never forget</em></h1><p id="dSub">Check dates, build your package and track every payment in one place.</p><div class="hero-cta"><a class="btn" href="#sec-date">Find your date</a><a class="btn ghost" href="#sec-pay">My payments</a></div>
+<div class="ready" aria-live="polite"><div class="ring" id="ring"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/><circle class="v" id="ringV" cx="22" cy="22" r="19"/></svg><b id="ringT">0%</b></div><span><b>Your plan is <span id="readyT">0%</span> ready</b><small id="readyS">Start by choosing a hall and a date.</small></span></div></div>
+<div class="hero-r"><div class="collage" aria-hidden="true"><figure class="cp c1"><img id="hc1" alt="" loading="lazy"></figure><figure class="cp c2"><img id="hc2" alt="" loading="lazy"></figure><figure class="cp c3"><img id="hc3" alt="" loading="lazy"></figure></div><aside class="clock" id="clock" aria-label="Party clock"></aside></div>
+</div></section>
+
+<section class="kpi-s" aria-label="Overview"><div class="wrap"><div id="alert" aria-live="polite"></div><div class="kpi" id="kpi"></div></div></section>
+
+<section class="inspo" aria-label="Celebration inspiration"><div class="wrap"><div class="inspo-h"><span class="kicker small">Get inspired</span><h2>Moments worth <em>celebrating</em></h2></div><div class="inspo-g" id="inspo"></div></div></section>
+
+<section class="blk" id="sec-date"><div class="wrap">
+<div class="sh reveal"><span class="num">1</span><div><span class="kicker small">Step one</span><h2>Find your <em>date</em></h2><p>Choose a hall, then tap a day on the calendar. We tell you instantly if it is free.</p></div></div>
+<div class="grid2">
+<div class="col">
+<div class="card reveal"><div class="chd"><h3>Choose your hall</h3><button class="lnk" type="button" id="cmpB">Compare halls</button></div><input type="search" class="find" id="hSearch" placeholder="Type to find a hall (name or guests)" aria-label="Find a hall"><p class="tiph">Tap a hall to select it.</p><div class="halls" id="halls"></div><p class="mut" id="hNone" hidden>No hall matches. Clear the search to see all halls.</p></div>
+<div class="card reveal"><h3>Tell us about the day</h3>
+<label>Occasion <small>(tap again to unselect)</small></label><div class="pills" id="types"></div>
+<div class="row2"><div><label for="dG">Guests</label><div class="stepper"><button type="button" id="gMinus" aria-label="Fewer guests">−</button><input id="dG" type="number" min="10" value="100" inputmode="numeric"><button type="button" id="gPlus" aria-label="More guests">+</button></div><small class="mut" id="gMsg"></small></div>
+<div><label for="dN">Event name <small>(optional)</small></label><input id="dN" type="text" maxlength="40" placeholder="e.g. Priya &amp; Karthik’s wedding"></div></div>
+</div></div>
+<div class="col">
+<div class="card cal-card reveal"><div class="cal-h"><button class="ib" type="button" id="mPrev" aria-label="Previous month">‹</button><b id="mTitle"></b><button class="ib" type="button" id="mNext" aria-label="Next month">›</button></div><div class="cal" id="cal"></div>
+<div class="legend"><span><i class="k free"></i>Free</span><span><i class="k bk"></i>Booked</span><span><i class="k mine"></i>Your event</span><span><i class="k sel"></i>Selected</span></div></div>
+<div class="card res reveal" id="res" aria-live="polite"></div>
+</div></div>
+</div></section>
+
+<section class="blk alt" id="sec-menu"><div class="wrap">
+<div class="sh reveal"><span class="num">2</span><div><span class="kicker small">Step two</span><h2>Choose your <em>menu</em></h2><p>Every kitchen is on site. Tap a style to select it, tap it again to unselect.</p></div></div>
+<div class="menu-wrap reveal"><div class="plates" id="plates"></div><div class="menucard" id="menuCard"></div></div>
+</div></section>
+
+<section class="blk" id="sec-decor"><div class="wrap">
+<div class="sh reveal"><span class="num">3</span><div><span class="kicker small">Step three</span><h2>Style your <em>decor</em></h2><p>Tap to add or remove. Your total updates as you go.</p></div></div>
+<input type="search" class="find" id="xSearch" placeholder="Type to find decor (e.g. lights, floral)" aria-label="Find decor"><div class="board reveal" id="board"></div>
+<div class="board-f reveal"><span id="decTot"></span><span class="bf-b"><button class="btn ghost sm" type="button" id="decAll">Select all</button><button class="btn ghost sm" type="button" id="decSkip">Unselect all</button></span></div>
+</div></section>
+
+<section class="blk alt" id="sec-pay"><div class="wrap">
+<div class="sh reveal"><span class="num">4</span><div><span class="kicker small">Step four</span><h2>Pay in <em>installments</em></h2><p>Reserve your date with the first of three payments. Track every one below.</p></div></div>
+<div class="card plan reveal" id="planCard"></div>
+<div class="plan-tools reveal"><button class="btn ghost sm" type="button" id="prB">Print or save plan as PDF</button><button class="btn ghost sm" type="button" id="lnB">Copy share link</button></div>
+<h3 class="subh reveal">My celebrations</h3>
+<div id="mine"></div>
+</div></section>
+
+<section class="blk" id="sec-tools"><div class="wrap">
+<div class="sh reveal"><span class="num">5</span><div><span class="kicker small">Step five</span><h2>Plan like a <em>pro</em></h2><p>Set a budget, manage your guest list and RSVPs, and follow a checklist built around your date.</p></div></div>
+<div class="tools">
+<div class="card reveal" id="budgetCard"><h3>Budget planner</h3>
+<label for="bgIn">My budget (₹)</label><input id="bgIn" type="number" min="0" step="10000" inputmode="numeric" placeholder="e.g. 500000">
+<div class="donut-w"><div class="donut" id="bgDonut"></div><ul class="leg" id="bgLeg"></ul></div><div class="bgs" id="bgS" aria-live="polite"></div></div>
+<div class="card reveal" id="taskCard"><h3>Planning checklist</h3><div class="pbar"><i id="tkBar"></i></div><small id="tkS"></small>
+<div class="selbar"><button type="button" class="btn ghost sm" id="tkAll">Select all</button><button type="button" class="btn ghost sm" id="tkNone">Unselect all</button></div>
+<ul class="tasks" id="tkList"></ul>
+<form class="gadd" id="tkAdd"><input type="text" id="tkN" maxlength="60" placeholder="Add your own task" aria-label="New task"><button class="btn sm" type="submit">Add</button></form></div>
+<div class="card reveal" id="guestCard"><h3>Guest list &amp; RSVP</h3><div class="gstats" id="gStats"></div>
+<form class="gadd" id="gAdd"><input type="text" id="gnN" maxlength="120" placeholder="Guest name (add several with commas)" aria-label="Guest name"><select id="gnG" aria-label="Group"><option>Family</option><option>Friends</option><option>Colleagues</option><option>VIP</option></select><button class="btn sm" type="submit">Add guest</button></form>
+<div class="gtools"><input type="text" id="gSearch" placeholder="Search guests" aria-label="Search guests"><button class="btn ghost sm" type="button" id="gCsv">Export CSV</button><button class="btn ghost sm" type="button" id="gUse">Use as guest count</button></div>
+<div class="selbar" id="gBulk"><label class="sa"><input type="checkbox" id="gAll" aria-label="Select all guests"><span id="gAllT">Select all</span></label><span class="sel-n" id="gSelN"></span><span class="sel-a" id="gSelA" hidden><button type="button" class="btn ghost sm" data-ba="Confirmed">Mark confirmed</button><button type="button" class="btn ghost sm" data-ba="Declined">Mark declined</button><button type="button" class="btn ghost sm" data-ba="Invited">Mark awaiting</button><button type="button" class="btn ghost sm bad" data-ba="del">Remove</button><button type="button" class="btn ghost sm" data-ba="none">Unselect all</button></span></div>
+<ul class="glist" id="gList"></ul></div>
+</div></div></section>
+</main>
+<button class="up" id="up" type="button" aria-label="Back to top">↑</button>
+<div class="tray" id="tray"></div>
+<dialog id="cmpD"><div class="pd"><div class="chd"><h3>Compare halls</h3><button class="ib" type="button" id="cmpX" aria-label="Close">✕</button></div><p class="mut" id="cmpS"></p><div class="cmpw" id="cmpT"></div></div></dialog>
+<dialog id="payD"><form method="dialog" class="pd"><h3 id="pdT">Pay installment</h3><p class="mut" id="pdS"></p><div class="pdA" id="pdA"></div>
+<div class="pdM"><label class="opt"><input type="radio" name="pm" checked><span>UPI</span></label><label class="opt"><input type="radio" name="pm"><span>Credit or debit card</span></label><label class="opt"><input type="radio" name="pm"><span>Net banking</span></label></div>
+<div class="pdB"><button class="btn" id="pdGo" value="go">Pay now</button><button class="btn ghost" value="cancel">Cancel</button></div><p class="mut sm">Demo payment. No real money is charged.</p></form></dialog>
+<script src="images.js"></script><script src="dashboard.js"></script>
+</body></html>
