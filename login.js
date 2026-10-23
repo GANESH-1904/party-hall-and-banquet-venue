@@ -9,14 +9,13 @@ const NEXT='index.html';
 /* already signed in -> straight to the planner */
 if(LS.getItem('aurelia_user')&&!(LS.getItem('aurelia_keep')==='0'&&!sessionStorage.getItem('aurelia_sess'))){location.replace(NEXT);return}
 /* images */
-$('#lgArt').style.setProperty('--art',`url(${imgUrl('login',1600)})`);
-[['#pi1','idWed'],['#pi2','idBday'],['#pi3','idEng']].forEach(([s,k])=>{const i=$(s);i.src=imgUrl(k,420);i.onerror=()=>{i.style.opacity=.0}});
+[['#pi1','idWed'],['#pi2','idBday'],['#pi3','idEng']].forEach(([s,k])=>{const i=$(s);i.src=imgUrl(k,420);i.onerror=()=>i.classList.add('off')});
 /* balloons */
-if(!RM)$('.balloons').innerHTML=[['6%','0s','#ff3d94','#7b1fa2'],['28%','-7s','#ffc94a','#ff8a3d'],['54%','-11s','#4fd1c5','#2a4d8f'],['78%','-4s','#b06cff','#ff3d94'],['92%','-9s','#ff8a3d','#c2185b']].map(x=>`<i style="--x:${x[0]};animation-delay:${x[1]};--c1:${x[2]};--c2:${x[3]}"></i>`).join('');
+if(!RM)$('.balloons').innerHTML='<i></i><i></i><i></i><i></i><i></i>';
 /* theme toggle */
 const sun='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>',moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
 const paintTh=()=>$('#th').innerHTML=root.dataset.theme=='dark'?sun:moon;paintTh();
-$('#th').onclick=()=>{root.dataset.theme=root.dataset.theme=='dark'?'light':'dark';LS.setItem('aurelia_theme',root.dataset.theme);paintTh()};
+$('#th').onclick=()=>{root.dataset.theme=root.dataset.theme=='dark'?'light':'dark';LS.setItem('aurelia_theme',root.dataset.theme);paintTh();COL=pal()};
 /* RTL / LTR switch */
 const paintDir=()=>{const r=root.dir=='rtl';$('#rtl').setAttribute('aria-pressed',r);$('#rtlT').textContent=r?'LTR':'RTL';$('#rtl').setAttribute('aria-label',r?'Switch text direction to left-to-right':'Switch text direction to right-to-left')};paintDir();
 $('#rtl').onclick=()=>{root.dir=root.dir=='rtl'?'ltr':'rtl';LS.setItem('aurelia_dir',root.dir);paintDir()};
@@ -32,7 +31,7 @@ const W=['wedding','birthday','engagement','reception','celebration'];let wi=0;
 if(!RM)setInterval(()=>{const r=$('#rot');r.classList.add('out');setTimeout(()=>{wi=(wi+1)%W.length;r.textContent=W[wi];r.classList.remove('out')},400)},2600);
 document.querySelectorAll('[data-n]').forEach(b=>{const n=+b.dataset.n;if(RM){b.textContent=n;return}let t0=null;requestAnimationFrame(function f(t){t0=t0||t;const p=Math.min((t-t0)/1400,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})});
 /* confetti */
-const cv=$('#fx'),cx=cv.getContext('2d');let P=[],run=false;const COL=['#ffc94a','#ff3d94','#ff8a3d','#4fd1c5','#b06cff','#ffffff'];
+const cv=$('#fx'),cx=cv.getContext('2d');let P=[],run=false;const pal=()=>{const s=getComputedStyle(document.documentElement);return['--secondary','--primary','--white'].map(v=>s.getPropertyValue(v).trim())};let COL=pal();
 function burst(x,y,n=160){if(RM)return;cv.width=innerWidth;cv.height=innerHeight;for(let i=0;i<n;i++){const a=Math.random()*6.28,v=4+Math.random()*10;P.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-6,s:3+Math.random()*5,r:Math.random()*6.28,vr:(Math.random()-.5)*.4,c:COL[i%COL.length],l:1})}
 if(!run){run=true;requestAnimationFrame(function f(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0);for(const p of P){p.vy+=.28;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l-=.011;cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s,-p.s/2,p.s*2,p.s);cx.restore()}if(P.length)requestAnimationFrame(f);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}})}}
 function toast(m){const t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2600)}

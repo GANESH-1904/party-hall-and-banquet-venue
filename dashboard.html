@@ -1,23 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Celebration Planner | Aurelia Hall – Banquets &amp; Celebrations</title><meta name="robots" content="noindex"><meta name="theme-color" content="#14061f"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e1d'/%3E%3Cpath d='M16 50V30a16 16 0 0 1 32 0v20' fill='none' stroke='%23e0bd6b' stroke-width='4' stroke-linecap='round'/%3E%3Cpolygon points='32,19 35,27 43,27 37,32 39,40 32,35 25,40 27,32 21,27 29,27' fill='%23e0bd6b'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="dashboard.css"></head>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Celebration Planner | Aurelia Hall – Banquets &amp; Celebrations</title><meta name="robots" content="noindex"><meta name="theme-color" content="#190812"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="images.css"><link rel="stylesheet" href="dashboard.css"></head>
 <body>
 <header class="tb" id="tb"><div class="tb-in">
-<a class="tb-brand" href="index.html" aria-label="Aurelia Hall – back to the website"><svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4l22 8v18c0 14-9 25-22 30C19 55 10 44 10 30V12z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M20 43V32a12 12 0 0 1 24 0v11" fill="none" stroke="#ffc94a" stroke-width="3" stroke-linecap="round"/><polygon points="32,20 34,26 40,26 35.5,30 37,36 32,32.5 27,36 28.5,30 24,26 30,26" fill="#ffc94a"/></svg><span><b>Aurelia</b><small>CELEBRATION PLANNER</small></span></a>
+<a class="tb-brand" href="index.html" aria-label="Aurelia Hall – back to the website"><svg class="logo-mark" width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgD" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:var(--secondary)"/><stop offset="1" style="stop-color:var(--primary)"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="none" stroke="url(#lgD)" stroke-width="2.6"/><circle cx="32" cy="32" r="24.5" fill="none" class="logo-hair" stroke-width="1" stroke-dasharray="1 4.2" stroke-linecap="round"/><path d="M19.5 47.5 32 21l12.5 26.5" fill="none" stroke="url(#lgD)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 47.5V39a6 6 0 0 1 12 0v8.5" fill="none" class="logo-arc" stroke-width="2.8" stroke-linecap="round"/><path d="M32 9.5c.7 3.6 1.9 4.8 5.5 5.5-3.6.7-4.8 1.9-5.5 5.5-.7-3.600-1.900-4.800-5.500-5.500 3.600-.7 4.800-1.900 5.500-5.500z" class="logo-star"/></svg><span><b>AURELIA</b><small>BANQUETS &amp; CELEBRATIONS</small></span></a>
 <nav class="steps" id="steps" aria-label="Planning steps"><a href="#sec-date" data-s="date"><i>1</i><span>Date</span></a><a href="#sec-menu" data-s="menu"><i>2</i><span>Menu</span></a><a href="#sec-decor" data-s="decor"><i>3</i><span>Decor</span></a><a href="#sec-pay" data-s="pay"><i>4</i><span>Payments</span></a><a href="#sec-tools" data-s="tools"><i>5</i><span>Toolkit</span></a></nav>
-<div class="tb-r"><button class="rtlb" id="rtl" type="button" aria-pressed="false" aria-label="Switch text direction to right-to-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4M21 7H8M7 21l-4-4 4-4M3 17h13"/></svg><b id="rtlT">RTL</b></button><button class="ib" id="th" type="button" aria-label="Toggle light or dark theme"></button></div>
+<div class="tb-r"><button class="rtlb" id="rtl" type="button" aria-pressed="false" aria-label="Switch text direction to right-to-left"><b id="rtlT">RTL</b></button><button class="ib" id="th" type="button" aria-label="Toggle light or dark theme"></button></div>
 </div></header>
 <main>
-<section class="hero" id="top"><canvas class="conf" id="conf" aria-hidden="true"></canvas><div class="hero-in">
+<section class="hero bg-dash" id="top"><canvas class="conf" id="conf" aria-hidden="true"></canvas><div class="hero-in">
 <div class="hero-t"><span class="kicker">Your celebration planner</span><h1>Plan a day they will <em>never forget</em></h1><p id="dSub">Check dates, build your package and track every payment in one place.</p><div class="hero-cta"><a class="btn" href="#sec-date">Find your date</a><a class="btn ghost" href="#sec-pay">My payments</a></div>
 <div class="ready" aria-live="polite"><div class="ring" id="ring"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/><circle class="v" id="ringV" cx="22" cy="22" r="19"/></svg><b id="ringT">0%</b></div><span><b>Your plan is <span id="readyT">0%</span> ready</b><small id="readyS">Start by choosing a hall and a date.</small></span></div></div>
 <div class="hero-r"><div class="collage" aria-hidden="true"><figure class="cp c1"><img id="hc1" alt="" loading="lazy"></figure><figure class="cp c2"><img id="hc2" alt="" loading="lazy"></figure><figure class="cp c3"><img id="hc3" alt="" loading="lazy"></figure></div><aside class="clock" id="clock" aria-label="Party clock"></aside></div>
 </div></section>
 
-<section class="kpi-s" aria-label="Overview"><div class="wrap"><div id="alert" aria-live="polite"></div><div class="kpi" id="kpi"></div></div></section>
+<section class="kpi-s" aria-label="Overview"><div class="wrap"><div id="alert" aria-live="polite"></div><div class="kpi" id="kpi"></div><span class="kicker small kpi-tag">Your celebration at a glance</span></div></section>
 
 <section class="inspo" aria-label="Celebration inspiration"><div class="wrap"><div class="inspo-h"><span class="kicker small">Get inspired</span><h2>Moments worth <em>celebrating</em></h2></div><div class="inspo-g" id="inspo"></div></div></section>
 
 <section class="blk" id="sec-date"><div class="wrap">
-<div class="sh reveal"><span class="num">1</span><div><span class="kicker small">Step one</span><h2>Find your <em>date</em></h2><p>Choose a hall, then tap a day on the calendar. We tell you instantly if it is free.</p></div></div>
+<div class="sh reveal"><span class="num">1</span><div><span class="kicker small">Pick the perfect day</span><h2>Find your <em>date</em></h2><p>Choose a hall, then tap a day on the calendar. We tell you instantly if it is free.</p></div></div>
 <div class="grid2">
 <div class="col">
 <div class="card reveal"><div class="chd"><h3>Choose your hall</h3><button class="lnk" type="button" id="cmpB">Compare halls</button></div><input type="search" class="find" id="hSearch" placeholder="Type to find a hall (name or guests)" aria-label="Find a hall"><p class="tiph">Tap a hall to select it.</p><div class="halls" id="halls"></div><p class="mut" id="hNone" hidden>No hall matches. Clear the search to see all halls.</p></div>
@@ -34,18 +34,18 @@
 </div></section>
 
 <section class="blk alt" id="sec-menu"><div class="wrap">
-<div class="sh reveal"><span class="num">2</span><div><span class="kicker small">Step two</span><h2>Choose your <em>menu</em></h2><p>Every kitchen is on site. Tap a style to select it, tap it again to unselect.</p></div></div>
+<div class="sh reveal"><span class="num">2</span><div><span class="kicker small">A feast, your way</span><h2>Choose your <em>menu</em></h2><p>Every kitchen is on site. Tap a style to select it, tap it again to unselect.</p></div></div>
 <div class="menu-wrap reveal"><div class="plates" id="plates"></div><div class="menucard" id="menuCard"></div></div>
 </div></section>
 
 <section class="blk" id="sec-decor"><div class="wrap">
-<div class="sh reveal"><span class="num">3</span><div><span class="kicker small">Step three</span><h2>Style your <em>decor</em></h2><p>Tap to add or remove. Your total updates as you go.</p></div></div>
+<div class="sh reveal"><span class="num">3</span><div><span class="kicker small">Make it sparkle</span><h2>Style your <em>decor</em></h2><p>Tap to add or remove. Your total updates as you go.</p></div></div>
 <input type="search" class="find" id="xSearch" placeholder="Type to find decor (e.g. lights, floral)" aria-label="Find decor"><div class="board reveal" id="board"></div>
 <div class="board-f reveal"><span id="decTot"></span><span class="bf-b"><button class="btn ghost sm" type="button" id="decAll">Select all</button><button class="btn ghost sm" type="button" id="decSkip">Unselect all</button></span></div>
 </div></section>
 
 <section class="blk alt" id="sec-pay"><div class="wrap">
-<div class="sh reveal"><span class="num">4</span><div><span class="kicker small">Step four</span><h2>Pay in <em>installments</em></h2><p>Reserve your date with the first of three payments. Track every one below.</p></div></div>
+<div class="sh reveal"><span class="num">4</span><div><span class="kicker small">Easy on your wallet</span><h2>Pay in <em>installments</em></h2><p>Reserve your date with the first of three payments. Track every one below.</p></div></div>
 <div class="card plan reveal" id="planCard"></div>
 <div class="plan-tools reveal"><button class="btn ghost sm" type="button" id="prB">Print or save plan as PDF</button><button class="btn ghost sm" type="button" id="lnB">Copy share link</button></div>
 <h3 class="subh reveal">My celebrations</h3>
@@ -53,7 +53,7 @@
 </div></section>
 
 <section class="blk" id="sec-tools"><div class="wrap">
-<div class="sh reveal"><span class="num">5</span><div><span class="kicker small">Step five</span><h2>Plan like a <em>pro</em></h2><p>Set a budget, manage your guest list and RSVPs, and follow a checklist built around your date.</p></div></div>
+<div class="sh reveal"><span class="num">5</span><div><span class="kicker small">Everything in its place</span><h2>Plan like a <em>pro</em></h2><p>Set a budget, manage your guest list and RSVPs, and follow a checklist built around your date.</p></div></div>
 <div class="tools">
 <div class="card reveal" id="budgetCard"><h3>Budget planner</h3>
 <label for="bgIn">My budget (₹)</label><input id="bgIn" type="number" min="0" step="10000" inputmode="numeric" placeholder="e.g. 500000">
